@@ -4,12 +4,20 @@ import 'package:todoey_flutter/widgets/tasks_list.dart';
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key? key}) : super(key: key);
 
+  Widget bottomSheetBuilder(BuildContext context) {
+    return Container(
+      child: Center(child: Text('This is something cool')),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: bottomSheetBuilder);
+        },
         child: Icon(
           Icons.add,
           color: Colors.white,
