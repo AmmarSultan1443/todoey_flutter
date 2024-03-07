@@ -6,7 +6,30 @@ class TasksScreen extends StatelessWidget {
 
   Widget bottomSheetBuilder(BuildContext context) {
     return Container(
-      child: Center(child: Text('This is something cool')),
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            'Add Task',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.lightBlueAccent, fontSize: 30.0),
+          ),
+          TextField(
+            autofocus: true,
+            textAlign: TextAlign.center,
+            onChanged: (value) {},
+          ),
+          MaterialButton(
+              color: Colors.lightBlueAccent,
+              child: Text(
+                'Add',
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+              onPressed: () {})
+        ],
+      ),
     );
   }
 
